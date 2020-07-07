@@ -27,9 +27,7 @@ export class LiveListComponent implements OnInit {
       this.livesPrevious = data.content;
       console.log(this.livesPrevious);
       this.livesPrevious.forEach(live => {
-        var url = live.liveLink;
-        var valida = url.replace("watch?v=", "embed/");
-        live.urlSafe = this.sanitizer.bypassSecurityTrustResourceUrl(valida);
+        live.urlSafe = this.sanitizer.bypassSecurityTrustResourceUrl(live.liveLink);
       });
     });
 
@@ -37,9 +35,7 @@ export class LiveListComponent implements OnInit {
       this.livesNext = data.content;
       console.log(this.livesNext);
       this.livesNext.forEach(live => {
-        var url = live.liveLink;
-        var valida = url.replace("watch?v=", "embed/");
-        live.urlSafe = this.sanitizer.bypassSecurityTrustResourceUrl(valida);
+        live.urlSafe = this.sanitizer.bypassSecurityTrustResourceUrl(live.liveLink);
       });
     });
   }
